@@ -1,0 +1,15 @@
+@media (max-width: 1100px) {
+    .mobile-none{
+        display: flex;
+    }
+    .mobile480{
+        display: none;
+    }
+    /*Header ///////////////////////////////////////////////*/
+    .header-submain-box:first-child .header-nav li>a{
+        display: none;
+    }
+    .header-submain-box:first-child .header-nav li>a.header-nav-check{
+        display: flex;
+    }
+}
