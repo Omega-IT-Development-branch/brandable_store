@@ -76,10 +76,23 @@
                 <div class="content flex row-flex product-card-main-box">
                     <div class="flex column-flex product-card-img-box">
                         <div class="product-card-img">
-                            <img src="img/prod-card/first.png">
+                            <video loop muted autoplay src="img/prod-card/firstgif.mp4"></video>
+                        </div> 
+                        <div class="product-card-img mobile-none">
+                            <img src="img/prod-card/2.png">
                         </div>
-                        <div><img></div>
-                        <div><img></div>
+                        <div class="product-card-img mobile-none">
+                            <img src="img/prod-card/3.png">
+                        </div>
+                        <div class="product-card-img mobile-none">
+                            <img src="img/prod-card/4.png">
+                        </div>
+                        <div class="product-card-img mobile-none">
+                            <img src="img/prod-card/5.png">
+                        </div>
+                        <div class="product-card-img mobile-none">
+                            <img src="img/prod-card/6.png">
+                        </div>
                     </div>
 
                     <div class="flex column-flex product-card-info-box">
@@ -91,8 +104,8 @@
                             <div class="flex row-flex product-card-color-box">
                                 <p class="text-uppercase body-large">COLOR — BLACK</p>
                                 <div class="flex row-flex color-figure-box">
-                                    <div class="color-figure1"></div>
-                                    <div class="color-figure2"></div>
+                                    <div class="color-figure1 pointer"></div>
+                                    <div class="color-figure2 pointer"></div>
                                 </div>
                             </div>
 
@@ -101,48 +114,26 @@
                                 <p class="sub-headline">1 290 CHF</p>
                             </div>
 
-                            <div class="flex column-flex product-card-price-box">
+                            <div class="flex column-flex product-card-size-box">
                                 <p class="body-small">Size</p>
                                 <div class="flex row-flex chips-size-product-card">
                                     <div class="flex row-flex catalog-chips pointer">
-                                        <div class="chips-circle">
-                                            <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="7" cy="7" r="7" fill="#1D1D1D"/>
-                                            </svg>
-                                        </div>
                                         <p class="body-special text-uppercase">XS</p>
                                     </div>
                                     <div class="flex row-flex catalog-chips pointer">
-                                        <div class="chips-circle">
-                                            <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="7" cy="7" r="7" fill="#1D1D1D"/>
-                                            </svg>
-                                        </div>
                                         <p class="body-special text-uppercase">s</p>
                                     </div>
                                     <div class="flex row-flex catalog-chips pointer">
-                                        <div class="chips-circle">
-                                            <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="7" cy="7" r="7" fill="#1D1D1D"/>
-                                            </svg>
-                                        </div>
                                         <p class="body-special text-uppercase">m</p>
                                     </div>
                                     <div class="flex row-flex catalog-chips pointer">
-                                        <div class="chips-circle">
-                                            <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="7" cy="7" r="7" fill="#1D1D1D"/>
-                                            </svg>
-                                        </div>
                                         <p class="body-special text-uppercase">l</p>
                                     </div>
                                     <div class="flex row-flex catalog-chips pointer">
-                                        <div class="chips-circle">
-                                            <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="7" cy="7" r="7" fill="#1D1D1D"/>
-                                            </svg>
-                                        </div>
                                         <p class="body-special text-uppercase">xl</p>
+                                    </div>
+                                    <div class="flex row-flex catalog-chips pointer">
+                                        <p class="body-special text-uppercase">xxl</p>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +144,7 @@
                             </div>
 
                             <div class="flex row-flex product-card-btn-box">
-                                <a class="btn-primary disabled">
+                                <a class="btn-primary disabled" id="ProdCardAddToBag">
                                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="7" cy="7" r="7" fill="white"/>
                                     </svg>
@@ -169,9 +160,18 @@
                         </div>
 
                         <div class="flex row-flex product-card-details-info-box">
-                            <p class="text-uppercase body-small product-card-details-info-left">DETAILS</p>
+                            <div class="flex row-flex product-card-shipping-returns-title pointer mobile480" id="productCardDetails">
+                                <p class="text-uppercase body-small">DETAILS</p>
+                                <div class="flex product-card-shipping-returns-title-right">
+                                    <svg id="productCardDetails-polygon" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.4567 7.04567C14.1811 7.46763 14.1811 8.53238 13.4567 8.95434L1.61315 15.8536C0.894355 16.2723 -2.78951e-06 15.7432 -2.60506e-06 14.8992L4.10682e-07 1.10078C5.95135e-07 0.256824 0.89436 -0.272275 1.61316 0.146446L13.4567 7.04567Z" fill="#1D1D1D"/>
+                                    </svg>
+                                </div>
+                            </div>
 
-                            <div class="flex column-flex product-card-details-info-right">
+                            <p class="text-uppercase body-small product-card-details-info-left mobile-none">DETAILS</p>
+
+                            <div class="flex column-flex product-card-details-info-right product-card-details-brand">
                                 <p class="text-uppercase body-small">Michael Kors</p>
                                 <div class="flex column-flex product-card-brand-info-box">
                                     <p class="body-special">4-way stretch Solotex fabric</p>
@@ -185,12 +185,12 @@
                                 </div>
                             </div>
 
-                            <div class="flex column-flex product-card-details-info-left">
+                            <div class="flex column-flex product-card-details-info-left product-card-details-style">
                                 <p class="text-uppercase body-small">Style</p>
                                 <p class="body-special">MK21m3010532-001</p>
                             </div>
 
-                            <div class="flex column-flex product-card-details-info-right">
+                            <div class="flex column-flex product-card-details-info-right product-card-details-material">
                                 <p class="text-uppercase body-small">Material</p>
                                 <p class="body-special">100% Solotex</p>
                             </div>
@@ -210,58 +210,304 @@
                             </div>
                         </div>
 
-                        <div>
-                            <div>
-                                <p>SIZE INFO</p>
-                                <div>
-                                    <div>
-                                        <img src="img/home/Polygon.svg">
-                                    </div>
-                                    <div>
-                                        <p>CM</p>
-                                        <p>INCHES”</p>
+                        <div class="flex column-flex product-card-size-info-box">
+                            <div class="flex row-flex product-card-size-title-box pointer" id="productCardSizeTitleBox">
+                                <p class="body-small text-uppercase">SIZE INFO</p>
+                                <div class="flex row-flex product-card-size-title-right ">
+                                        <svg id="productCardSizeTitleBox-polygon" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13.4567 7.04567C14.1811 7.46763 14.1811 8.53238 13.4567 8.95434L1.61315 15.8536C0.894355 16.2723 -2.78951e-06 15.7432 -2.60506e-06 14.8992L4.10682e-07 1.10078C5.95135e-07 0.256824 0.89436 -0.272275 1.61316 0.146446L13.4567 7.04567Z" fill="#1D1D1D"/>
+                                        </svg>
+                                    <div class="flex row-flex" id="productCardSizeTitleBox-dop-info">
+                                        <p class="body-small text-uppercase span-line">CM</p>
+                                        <p class="body-small text-uppercase span-gray">INCHES”</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div>
-                                <div>
-                                    <p>Size</p>
-                                    <p>Body Length</p>
-                                    <p>Shoulder Width</p>
-                                    <p>Chest Width</p>
-                                    <p>Sleeve Length</p>
+                            <div class="flex column-flex product-card-table-size mobile-none">
+                                <div class="flex row-flex product-card-table-size-head">
+                                    <p class="body-special">Size</p>
+                                    <p class="body-special">Body Length</p>
+                                    <p class="body-special">Shoulder Width</p>
+                                    <p class="body-special">Chest Width</p>
+                                    <p class="body-special">Sleeve Length</p>
                                 </div>
 
-                                <ul>
-                                    <li>
-                                        <p>XS</p>
-                                        <p>66</p>
-                                        <p>59.7</p>
-                                        <p>119</p>
-                                        <p>89.22</p>
+                                <ul class="flex column-flex product-card-table-size-body">
+                                    <li class="flex row-flex product-card-table-size-row">
+                                        <p class="text-uppercase body-small">XS</p>
+                                        <p class="text-uppercase body-small">66</p>
+                                        <p class="text-uppercase body-small">59.7</p>
+                                        <p class="text-uppercase body-small">119</p>
+                                        <p class="text-uppercase body-small">89.22</p>
+                                    </li>
+
+                                    <li class="flex row-flex product-card-table-size-row">
+                                        <p class="text-uppercase body-small">S</p>
+                                        <p class="text-uppercase body-small">68.6</p>
+                                        <p class="text-uppercase body-small">62.2</p>
+                                        <p class="text-uppercase body-small">124</p>
+                                        <p class="text-uppercase body-small">90.81</p>
+                                    </li>
+
+                                    <li class="flex row-flex product-card-table-size-row">
+                                        <p class="text-uppercase body-small">m</p>
+                                        <p class="text-uppercase body-small">68.6</p>
+                                        <p class="text-uppercase body-small">66</p>
+                                        <p class="text-uppercase body-small">132</p>
+                                        <p class="text-uppercase body-small">92.7</p>
+                                    </li>
+
+                                    <li class="flex row-flex product-card-table-size-row">
+                                        <p class="text-uppercase body-small">l</p>
+                                        <p class="text-uppercase body-small">71.1</p>
+                                        <p class="text-uppercase body-small">71.1</p>
+                                        <p class="text-uppercase body-small">142</p>
+                                        <p class="text-uppercase body-small">95.3</p>
+                                    </li>
+
+                                    <li class="flex row-flex product-card-table-size-row">
+                                        <p class="text-uppercase body-small">Xl</p>
+                                        <p class="text-uppercase body-small">71.1</p>
+                                        <p class="text-uppercase body-small">76.2</p>
+                                        <p class="text-uppercase body-small">152</p>
+                                        <p class="text-uppercase body-small">97.8</p>
+                                    </li>
+
+                                    <li class="flex row-flex product-card-table-size-row">
+                                        <p class="text-uppercase body-small">Xll</p>
+                                        <p class="text-uppercase body-small">73.7</p>
+                                        <p class="text-uppercase body-small">81.3</p>
+                                        <p class="text-uppercase body-small">163</p>
+                                        <p class="text-uppercase body-small">100</p>
                                     </li>
                                 </ul>
                             </div>
+
+                            <div class="flex column-flex mobile-product-card-table-size mobile480">
+                                <div class="flex row-flex chips-size-product-card">
+                                    <div class="flex row-flex catalog-chips catalog-chips-checked pointer tabs-size"  id="size-tab-btn1">
+                                        <p class="body-special text-uppercase">XS</p>
+                                    </div>
+                                    <div class="flex row-flex catalog-chips pointer tabs-size" id="size-tab-btn2">
+                                        <p class="body-special text-uppercase">s</p>
+                                    </div>
+                                    <div class="flex row-flex catalog-chips pointer tabs-size" id="size-tab-btn3">
+                                        <p class="body-special text-uppercase">m</p>
+                                    </div>
+                                    <div class="flex row-flex catalog-chips pointer tabs-size" id="size-tab-btn4">
+                                        <p class="body-special text-uppercase">l</p>
+                                    </div>
+                                    <div class="flex row-flex catalog-chips pointer tabs-size" id="size-tab-btn5">
+                                        <p class="body-special text-uppercase">xl</p>
+                                    </div>
+                                    <div class="flex row-flex catalog-chips pointer tabs-size" id="size-tab-btn6">
+                                        <p class="body-special text-uppercase">xxl</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex column-flex mobile-product-card-size-tabs" id="size-tab1">
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Body Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">66 CM</p>
+                                            <p class="body-small text-uppercase">27.5 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Shoulder Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">59.7 CM</p>
+                                            <p class="body-small text-uppercase">45 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Chest Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">119 CM</p>
+                                            <p class="body-small text-uppercase">34 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Sleeve Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">89.22 CM</p>
+                                            <p class="body-small text-uppercase">48 IN”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex mobile-product-card-size-tabs" id="size-tab2">
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Body Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">674 CM</p>
+                                            <p class="body-small text-uppercase">20.5 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Shoulder Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">494.7 CM</p>
+                                            <p class="body-small text-uppercase">45 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Chest Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">1419 CM</p>
+                                            <p class="body-small text-uppercase">340 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Sleeve Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">89.22 CM</p>
+                                            <p class="body-small text-uppercase">4804 IN”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex mobile-product-card-size-tabs" id="size-tab3">
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Body Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">66 CM</p>
+                                            <p class="body-small text-uppercase">27.5 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Shoulder Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">59.7 CM</p>
+                                            <p class="body-small text-uppercase">45 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Chest Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">119 CM</p>
+                                            <p class="body-small text-uppercase">34 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Sleeve Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">89.22 CM</p>
+                                            <p class="body-small text-uppercase">48 IN”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex mobile-product-card-size-tabs" id="size-tab4">
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Body Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">665 CM</p>
+                                            <p class="body-small text-uppercase">27.5 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Shoulder Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">595.7 CM</p>
+                                            <p class="body-small text-uppercase">45 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Chest Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">1159 CM</p>
+                                            <p class="body-small text-uppercase">34 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Sleeve Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">895.22 CM</p>
+                                            <p class="body-small text-uppercase">48 IN”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex mobile-product-card-size-tabs" id="size-tab5">
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Body Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">606 CM</p>
+                                            <p class="body-small text-uppercase">27.5 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Shoulder Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">509.7 CM</p>
+                                            <p class="body-small text-uppercase">45 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Chest Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">1019 CM</p>
+                                            <p class="body-small text-uppercase">34 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Sleeve Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">8009.22 CM</p>
+                                            <p class="body-small text-uppercase">48 IN”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex mobile-product-card-size-tabs" id="size-tab6">
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Body Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">66 CM</p>
+                                            <p class="body-small text-uppercase">270.5 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Shoulder Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">59.7 CM</p>
+                                            <p class="body-small text-uppercase">405 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Chest Width</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">119 CM</p>
+                                            <p class="body-small text-uppercase">304 IN”</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex column-flex mobile-product-card-table-size-box">
+                                        <p class="body-special">Sleeve Length</p>
+                                        <div class="flex row-flex mobile-product-card-table-size-info">
+                                            <p class="body-small text-uppercase">89.22 CM</p>
+                                            <p class="body-small text-uppercase">408 IN”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div>
-                            <div>
-                                <p>SHIPPING AND RETURNS</p>
-                                <div>
-                                    <img src="img/home/Polygon.svg">
+                        <div class="flex column-flex product-card-shipping-returns-box">
+                            <div class="flex row-flex product-card-shipping-returns-title pointer" id="productCardShippingReturns">
+                                <p class="text-uppercase body-small">SHIPPING AND RETURNS</p>
+                                <div class="flex product-card-shipping-returns-title-right">
+                                    <svg id="productCardShippingReturns-polygon" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.4567 7.04567C14.1811 7.46763 14.1811 8.53238 13.4567 8.95434L1.61315 15.8536C0.894355 16.2723 -2.78951e-06 15.7432 -2.60506e-06 14.8992L4.10682e-07 1.10078C5.95135e-07 0.256824 0.89436 -0.272275 1.61316 0.146446L13.4567 7.04567Z" fill="#1D1D1D"/>
+                                    </svg>
                                 </div>
                             </div>
 
-                            <div>
-                                <p>
+                            <div class="flex row-flex product-card-shipping-returns-text-box">
+                                <p class="body-special">
                                     Most products are shipped Standard Ground UPS or Fedex based 
                                     on delivery location. USPS final delivery where applicable 
                                     and is estimated to arrive in 5-10 business days. In rare cases, delays 
                                     can occur at the warehouse or carrier level that extend that time frame.
-                                    <br><br>
+                                <br><br>
                                     Made-To-Order products are shipped based on time frames of product development.
-                                    <br><br>
+                                <br><br>
                                     Returns are accepted on this product, with payment refunded 
                                     to a Brandable Gift Card, which can be used for future purchases 
                                     on my-brandable.com
@@ -270,8 +516,493 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="flex row-flex product-card-img-box-mobile content mobile480">
+                    <div class="product-card-img mobile-none">
+                        <img src="img/prod-card/first.png">
+                    </div>
+                    <div class="product-card-img">
+                        <img src="img/prod-card/2.png">
+                    </div>
+                    <div class="product-card-img">
+                        <img src="img/prod-card/3.png">
+                    </div>
+                    <div class="product-card-img">
+                        <img src="img/prod-card/4.png">
+                    </div>
+                    <div class="product-card-img">
+                        <img src="img/prod-card/5.png">
+                    </div>
+                    <div class="product-card-img">
+                        <img src="img/prod-card/6.png">
+                    </div>
+                </div>
             </section>
 
+            <section>
+                <div class="flex column-flex">
+                    <div class="flex row-flex mini-title content">
+                        <div class="mini-title-img">
+                            <svg width="100%" height="100%" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24.5858 1.41401C25.8457 0.154085 28 1.04642 28 2.82823V25.9998C28 27.1044 27.1046 27.9998 26 27.9998H2.82843C1.04662 27.9998 0.154284 25.8455 1.41421 24.5856L24.5858 1.41401Z" fill="#1D1D1D"/>
+                            </svg>
+                        </div>
+                        <p class="body-large text-uppercase">top products</p>
+                    </div>
+
+                    <div class="flex column-flex h2-title content">
+                        <div class="h2-title-big">
+                            <h2 class="text-uppercase">Popular</h2>
+                            <h2 class="text-uppercase">in our</h2>
+                            <h2 class="text-uppercase">shop</h2>
+                        </div>
+                    </div>
+
+                    <div class="swiper mySwiper catalogTopProdSwiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide flex column-flex product-item mobile-none">
+                                <div class="flex column-flex product-item-info">
+                                    <p class="text-uppercase body-large">Shop the Collection</p>
+                                    <a class="body-special pointer"><span class="span-line body-special">View</span> All</a>
+                                </div>
+                            </li>              
+                            <li class="swiper-slide flex column-flex product-item">
+                                <div class="product-img"><img src="img/home/newCollection3.png"></div>
+                                <div class="flex column-flex product-text-box">
+                                    <div class="flex row-flex product-text-name"> 
+                                        <p class="body-special">Alohas</p>
+                                        <p class="body-special">Jackets</p>
+                                    </div>
+                                    <div class="flex row-flex product-text-price">
+                                        <p class="body-small text-uppercase">Ora Pointelle</p>
+                                        <p class="body-small text-uppercase"><span class="span-gray span-center-line"></span>590 CHF</p>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex size-pag-box">
+                                    <div class="flex row-flex product-pagination">
+                                    </div>
+    
+                                    <div class="flex row-flex product-size">
+                                        <p class="text-uppercase pointer body-small">XS</p>
+                                        <p class="text-uppercase pointer body-small">S</p>
+                                        <p class="text-uppercase pointer body-small">M</p>
+                                        <p class="text-uppercase pointer body-small">L</p>
+                                        <p class="text-uppercase pointer body-small"><span class="span-line">ADD</span> TO CART</p>
+                                    </div>
+                                </div>
+                                <div class="sale-card">
+                                    <p class="body-special">—20%</p>
+                                </div>
+                                <div class="favorite-card"></div>
+                            </li>
+                            <li class="swiper-slide flex column-flex product-item">
+                                <div class="product-img"><img src="img/home/newCollection4.png"></div>
+                                <div class="flex column-flex product-text-box">
+                                    <div class="flex row-flex product-text-name"> 
+                                        <p class="body-special">Levis</p>
+                                        <p class="body-special">Jackets</p>
+                                    </div>
+                                    <div class="flex row-flex product-text-price">
+                                        <p class="body-small text-uppercase">Pointelle</p>
+                                        <p class="body-small text-uppercase"><span class="span-gray span-center-line"></span>240 CHF</p>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex size-pag-box">
+                                    <div class="flex row-flex product-pagination">
+                                    </div>
+    
+                                    <div class="flex row-flex product-size">
+                                        <p class="text-uppercase pointer body-small">XS</p>
+                                        <p class="text-uppercase pointer body-small">S</p>
+                                        <p class="text-uppercase pointer body-small">M</p>
+                                        <p class="text-uppercase pointer body-small">L</p>
+                                        <p class="text-uppercase pointer body-small"><span class="span-line">ADD</span> TO CART</p>
+                                    </div>
+                                </div>
+                                <div class="sale-card sale-card-none">
+                                    <p class="body-special">—20%</p>
+                                </div>
+                                <div class="favorite-card favorite-card-none"></div>
+                            </li>
+                            <li class="swiper-slide flex column-flex product-item">
+                                <div class="product-img"><img src="img/home/newCollection5.png"></div>
+                                <div class="flex column-flex product-text-box">
+                                    <div class="flex row-flex product-text-name"> 
+                                        <p class="body-special">Alohas</p>
+                                        <p class="body-special">T-shirt</p>
+                                        
+                                    </div>
+                                    <div class="flex row-flex product-text-price">
+                                        <p class="body-small text-uppercase">Dina Black Tank</p>
+                                        <p class="body-small text-uppercase"><span class="span-gray span-center-line"></span>160 CHF</p>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex size-pag-box">
+                                    <div class="flex row-flex product-pagination">
+                                    </div>
+    
+                                    <div class="flex row-flex product-size">
+                                        <p class="text-uppercase pointer body-small">XS</p>
+                                        <p class="text-uppercase pointer body-small">S</p>
+                                        <p class="text-uppercase pointer body-small">M</p>
+                                        <p class="text-uppercase pointer body-small">L</p>
+                                        <p class="text-uppercase pointer body-small"><span class="span-line">ADD</span> TO CART</p>
+                                    </div>
+                                </div>
+                                <div class="sale-card sale-card-none">
+                                    <p class="body-special">—20%</p>
+                                </div>
+                                <div class="favorite-card favorite-card-none"></div>
+                            </li>
+                            <li class="swiper-slide flex column-flex product-item">
+                                <div class="product-img"><img src="img/home/newCollection6.png"></div>
+                                <div class="flex column-flex product-text-box">
+                                    <div class="flex row-flex product-text-name"> 
+                                        <p class="body-special">Alohas</p>
+                                        <p class="body-special">Shirt</p>
+                                    </div>
+                                    <div class="flex row-flex product-text-price">
+                                        <p class="body-small text-uppercase">Gabrielle</p>
+                                        <p class="body-small text-uppercase"><span class="span-gray span-center-line"></span>190 CHF</p>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex size-pag-box">
+                                    <div class="flex row-flex product-pagination">
+                                    </div>
+    
+                                    <div class="flex row-flex product-size">
+                                        <p class="text-uppercase pointer body-small">XS</p>
+                                        <p class="text-uppercase pointer body-small">S</p>
+                                        <p class="text-uppercase pointer body-small">M</p>
+                                        <p class="text-uppercase pointer body-small">L</p>
+                                        <p class="text-uppercase pointer body-small"><span class="span-line">ADD</span> TO CART</p>
+                                    </div>
+                                </div>
+                                <div class="sale-card sale-card-none">
+                                    <p class="body-special">—20%</p>
+                                </div>
+                                <div class="favorite-card favorite-card-none"></div>
+                            </li>
+                            <li class="swiper-slide flex column-flex product-item">
+                                <div class="product-img"><img src="img/home/newCollection4.png"></div>
+                                <div class="flex column-flex product-text-box">
+                                    <div class="flex row-flex product-text-name"> 
+                                        <p class="body-special">Levis</p>
+                                        <p class="body-special">Jackets</p>
+                                    </div>
+                                    <div class="flex row-flex product-text-price">
+                                        <p class="body-small text-uppercase">Pointelle</p>
+                                        <p class="body-small text-uppercase"><span class="span-gray span-center-line"></span>240 CHF</p>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex size-pag-box">
+                                    <div class="flex row-flex product-pagination">
+                                    </div>
+    
+                                    <div class="flex row-flex product-size">
+                                        <p class="text-uppercase pointer body-small">XS</p>
+                                        <p class="text-uppercase pointer body-small">S</p>
+                                        <p class="text-uppercase pointer body-small">M</p>
+                                        <p class="text-uppercase pointer body-small">L</p>
+                                        <p class="text-uppercase pointer body-small"><span class="span-line">ADD</span> TO CART</p>
+                                    </div>
+                                </div>
+                                <div class="sale-card sale-card-none">
+                                    <p class="body-special">—20%</p>
+                                </div>
+                                <div class="favorite-card favorite-card-none"></div>
+                            </li>
+                            <li class="swiper-slide flex column-flex product-item">
+                                <div class="product-img"><img src="img/home/newCollection5.png"></div>
+                                <div class="flex column-flex product-text-box">
+                                    <div class="flex row-flex product-text-name"> 
+                                        <p class="body-special">Alohas</p>
+                                        <p class="body-special">T-shirt</p>
+                                    </div>
+                                    <div class="flex row-flex product-text-price">
+                                        <p class="body-small text-uppercase">Dina Black Tank</p>
+                                        <p class="body-small text-uppercase"><span class="span-gray span-center-line"></span>160 CHF</p>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex size-pag-box">
+                                    <div class="flex row-flex product-pagination">
+                                    </div>
+    
+                                    <div class="flex row-flex product-size">
+                                        <p class="text-uppercase pointer body-small">XS</p>
+                                        <p class="text-uppercase pointer body-small">S</p>
+                                        <p class="text-uppercase pointer body-small">M</p>
+                                        <p class="text-uppercase pointer body-small">L</p>
+                                        <p class="text-uppercase pointer body-small"><span class="span-line">ADD</span> TO CART</p>
+                                    </div>
+                                </div>
+                                <div class="sale-card sale-card-none">
+                                    <p class="body-special">—20%</p>
+                                </div>
+                                <div class="favorite-card favorite-card-none"></div>
+                            </li>
+                            <li class="swiper-slide flex column-flex product-item">
+                                <div class="product-img"><img src="img/home/newCollection6.png"></div>
+                                <div class="flex column-flex product-text-box">
+                                    <div class="flex row-flex product-text-name"> 
+                                        <p class="body-special">Alohas</p>
+                                        <p class="body-special">Shirt</p>
+                                    </div>
+                                    <div class="flex row-flex product-text-price">
+                                        <p class="body-small text-uppercase">Gabrielle</p>
+                                        <p class="body-small text-uppercase"><span class="span-gray span-center-line"></span>190 CHF</p>
+                                    </div>
+                                </div>
+                                <div class="flex column-flex size-pag-box">
+                                    <div class="flex row-flex product-pagination">
+                                    </div>
+    
+                                    <div class="flex row-flex product-size">
+                                        <p class="text-uppercase pointer body-small">XS</p>
+                                        <p class="text-uppercase pointer body-small">S</p>
+                                        <p class="text-uppercase pointer body-small">M</p>
+                                        <p class="text-uppercase pointer body-small">L</p>
+                                        <p class="text-uppercase pointer body-small"><span class="span-line">ADD</span> TO CART</p>
+                                    </div>
+                                </div>
+                                <div class="sale-card sale-card-none">
+                                    <p class="body-special">—20%</p>
+                                </div>
+                                <div class="favorite-card favorite-card-none"></div>
+                            </li>
+                        </ul>
+
+                        <div class="mobile480 flex column-flex shop-the-col ">
+                            <div class="flex column-flex product-item-info">
+                                <p class="text-uppercase body-large">Shop Popular</p>
+                                <a class="body-special pointer"><span class="span-line body-special">View</span> All</a>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </section>
+
+            <!--section Viewed items-->
+            <section>
+                <div class="flex column-flex content">
+                    <div class="flex row-flex mini-title">
+                        <div class="mini-title-img">
+                            <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M28 2C29.1046 2 30.0074 2.89846 29.9297 4.00028C28.9507 17.87 17.87 28.9507 4.00028 29.9297C2.89845 30.0074 2 29.1046 2 28L2 4C2 2.89543 2.89543 2 4 2L28 2Z" fill="#1D1D1D"/>
+                            </svg>                    
+                        </div>
+                        <p class="body-large text-uppercase">Viewed items</p>
+                    </div>
+
+                    <ul class="flex column-flex">
+                        <div class="flex row-flex viewed-item-head">
+                            <p class="body-small text-uppercase span-gray">Today</p>
+                        </div>
+                        <li class="flex column-flex viewed-item">
+                            <div class="cursor viewed-item-cursor viewed-item-cursor1"><img src="img/cursor/girl.png"></div>
+
+                            <div class="flex row-flex viewed-item-text">
+                                <p class="body-large text-uppercase">Rib Tank</p>
+                                <p class="body-large text-uppercase">190 CHF</p>
+                                <div class="flex row-flex viewed-item-color">
+                                    <div class="viewed-item-color-img"><img src="img/home/viewed-item-khacki.jpg"></div>
+                                    <p class="body-large">Khaki</p>
+                                </div>
+                                <p class="body-large">Alohas</p>
+                                <p class="body-large">T-shirt</p>
+                            </div>
+                            <div class="under-line"></div>
+                        </li>
+                        <li class="flex column-flex viewed-item">
+                            <div class="cursor viewed-item-cursor viewed-item-cursor2"><img src="img/cursor/girl2.png"></div>
+                            <div class="flex row-flex viewed-item-text">
+                                <p class="body-large text-uppercase">Iconic Supima T-Shirt</p>
+                                <p class="body-large text-uppercase">290 CHF</p>
+                                <div class="flex row-flex viewed-item-color">
+                                    <div class="viewed-item-color-img"><img src="img/home/viewed-item-red.jpg"></div>
+                                    <p class="body-large">red</p>
+                                </div>
+                                <p class="body-large">Cosy Sunday</p>
+                                <p class="body-large">T-shirt</p>
+                            </div>
+                            <div class="under-line"></div>
+                        </li>
+                        <li class="flex column-flex viewed-item">
+                            <div class="cursor viewed-item-cursor viewed-item-cursor3"><img src="img/cursor/girl3.png"></div>
+                            <div class="flex row-flex viewed-item-text">
+                                <p class="body-large text-uppercase">Dina Black Tank</p>
+                                <p class="body-large text-uppercase">190 CHF</p>
+                                <div class="flex row-flex viewed-item-color">
+                                    <div class="viewed-item-color-img"><img src="img/home/viewed-item-khacki.jpg"></div>
+                                    <p class="body-large">Khaki</p>
+                                </div>
+                                <p class="body-large">Alohas</p>
+                                <p class="body-large">Shirt</p>
+                            </div>
+                            <div class="under-line"></div>
+                        </li>
+                    </ul>
+
+                    <ul class="flex column-flex">
+                        <div class="flex row-flex viewed-item-head">
+                            <p class="body-small text-uppercase span-gray">Yesterday</p>
+                        </div>
+                        <li class="flex column-flex viewed-item">
+                            <div class="cursor viewed-item-cursor viewed-item-cursor4"><img src="img/cursor/girl4.png"></div>
+                            <div class="flex row-flex viewed-item-text">
+                                <p class="body-large text-uppercase">Alva Convertible Nylon Track</p>
+                                <p class="body-large text-uppercase">160 CHF</p>
+                                <div class="flex row-flex viewed-item-color">
+                                    <div class="viewed-item-color-img"><img src="img/home/viewed-item-blue.jpg"></div>
+                                    <p class="body-large">blue</p>
+                                </div>
+                                <p class="body-large">Alohas</p>
+                                <p class="body-large">T-shirt</p>
+                            </div>
+                            <div class="under-line"></div>
+                        </li>
+                        <li class="flex column-flex viewed-item">
+                            <div class="cursor viewed-item-cursor viewed-item-cursor5"><img src="img/cursor/girl5.png"></div>
+                            <div class="flex row-flex viewed-item-text">
+                                <p class="body-large text-uppercase">Iconic Supima T-Shirt</p>
+                                <p class="body-large text-uppercase">1900 CHF</p>
+                                <div class="flex row-flex viewed-item-color">
+                                    <div class="viewed-item-color-img"><img src="img/home/viewed-item-green.jpg"></div>
+                                    <p class="body-large">green</p>
+                                </div>
+                                <p class="body-large">Cosy Sunday</p>
+                                <p class="body-large">T-shirt</p>
+                            </div>
+                            <div class="under-line"></div>
+                        </li>
+                    </ul>
+
+                    <ul class="flex column-flex">
+                        <div class="flex row-flex viewed-item-head">
+                            <p class="body-small text-uppercase span-gray">20.03.2024</p>
+                        </div>
+                        <li class="flex column-flex viewed-item">
+                            <div class="cursor viewed-item-cursor viewed-item-cursor6"><img src="img/cursor/girl3.png"></div>
+                            <div class="flex row-flex viewed-item-text">
+                                <p class="body-large text-uppercase">Lorette</p>
+                                <p class="body-large text-uppercase">190 CHF</p>
+                                <div class="flex row-flex viewed-item-color">
+                                    <div class="viewed-item-color-img"><img src="img/home/viewed-item-khacki.jpg"></div>
+                                    <p class="body-large">Khaki</p>
+                                </div>
+                                <p class="body-large">Alohas</p>
+                                <p class="body-large">T-shirt</p>
+                            </div>
+                            <div class="under-line"></div>
+                        </li>
+                        <li class="flex column-flex viewed-item">
+                            <div class="cursor viewed-item-cursor viewed-item-cursor7"><img src="img/cursor/girl.png"></div>
+                            <div class="flex row-flex viewed-item-text">
+                                <p class="body-large text-uppercase">Gabrielle</p>
+                                <p class="body-large text-uppercase">290 CHF</p>
+                                <div class="flex row-flex viewed-item-color">
+                                    <div class="viewed-item-color-img"><img src="img/home/viewed-item-blue.jpg"></div>
+                                    <p class="body-large">blue</p>
+                                </div>
+                                <p class="body-large">Cosy Sunday</p>
+                                <p class="body-large">T-shirt</p>
+                            </div>
+                            <div class="under-line"></div>
+                        </li>
+                        <li class="flex column-flex viewed-item">
+                            <div class="cursor viewed-item-cursor viewed-item-cursor8"><img src="img/cursor/girl2.png"></div>
+                            <div class="flex row-flex viewed-item-text">
+                                <p class="body-large text-uppercase">Ora Pointelle</p>
+                                <p class="body-large text-uppercase">480 CHF</p>
+                                <div class="flex row-flex viewed-item-color">
+                                    <div class="viewed-item-color-img"><img src="img/home/viewed-item-red.jpg"></div>
+                                    <p class="body-large">red</p>
+                                </div>
+                                <p class="body-large">Alohas</p>
+                                <p class="body-large">Shirt</p>
+                            </div>
+                            <div class="under-line"></div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!--section whats-new-->
+            <section class="section-margin16">
+                <div class="flex column-flex">
+                    <div class="flex row-flex mini-title content">
+                        <div class="mini-title-img">
+                            <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M27.9612 14.2635C29.3048 15.0313 29.3048 16.9687 27.9611 17.7364L5.99228 30.2901C4.65896 31.052 3 30.0892 3 28.5536L3 3.44632C3 1.91067 4.65897 0.947935 5.99228 1.70983L27.9612 14.2635Z" fill="#1D1D1D"/>
+                            </svg>                           
+                        </div>
+                        <p class="body-large text-uppercase">Blog</p>
+                    </div>
+
+                    <div class="flex column-flex h1-title content">
+                        <div class="h1-title-big mobile-none">
+                            <h1 class="text-uppercase">What's new?</h1>
+                        </div>
+                        <div class="h1-title-big mobile480">
+                            <h1 class="text-uppercase mobile480">BRANDA—<br>ZINE</h1>
+                        </div>
+                    </div>
+                    
+                    <div class="cursor whatsNewSwiper-cursor"><img src="img/cursor/Buttons.png"></div>
+                    <div class="swiper mySwiper whatsNewSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="brandazine-swiper-box">
+                                    <div class="brandazine-swiper-back-img"><img src="img/home/brandazineSlider1.png"></div>
+                                    <div class="brandazine-swiper-text-box">
+                                    <!--<p>Возможно тут будет текст</p>-->
+                                </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brandazine-swiper-box">
+                                    <div class="brandazine-swiper-back-img"><img src="img/home/mainHomeSlider6.png"></div>
+                                    <div class="brandazine-swiper-text-box">
+                                    <!--<p>Возможно тут будет текст</p>-->
+                                </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brandazine-swiper-box">
+                                    <div class="brandazine-swiper-back-img"><img src="img/home/mainHomeSlider5.png"></div>
+                                    <div class="brandazine-swiper-text-box">
+                                    <!--<p>Возможно тут будет текст</p>-->
+                                </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brandazine-swiper-box">
+                                    <div class="brandazine-swiper-back-img"><img src="img/home/mainHomeSlider2.png"></div>
+                                    <div class="brandazine-swiper-text-box">
+                                    <!--<p>Возможно тут будет текст</p>-->
+                                </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brandazine-swiper-box">
+                                    <div class="brandazine-swiper-back-img"><img src="img/home/mainHomeSlider3.png"></div>
+                                    <div class="brandazine-swiper-text-box">
+                                    <!--<p>Возможно тут будет текст</p>-->
+                                </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brandazine-swiper-box">
+                                    <div class="brandazine-swiper-back-img"><img src="img/home/mainHomeSlider4.png"></div>
+                                    <div class="brandazine-swiper-text-box">
+                                    <!--<p>Возможно тут будет текст</p>-->
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </section>
         </main>
 
         <footer class="flex column-flex">
