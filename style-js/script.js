@@ -721,6 +721,20 @@ if (inputText.length > 0){
     }
 }
 
+var inputEmail = document.querySelectorAll("input[type=email]");
+if (inputEmail.length > 0){
+    for(var i = 0; i < inputEmail.length; i++){
+        inputEmail[i].oninput = function() {
+            if (this.value == ''){
+                this.classList.remove('input-oninput');
+            }
+            else{
+                this.classList.add('input-oninput');
+            }
+        }
+    }
+}
+
 var shoppingBagOrderSummary = document.getElementById('shoppingBagOrderSummary');
 var shoppingBagOrderSummaryPolygon = document.getElementById('shoppingBagOrderSummary-polygon');
 if (shoppingBagOrderSummary){
@@ -743,4 +757,214 @@ if (shoppingBagOrderSummary){
 }  
 
 
+var deliveryBtn = document.getElementById('btnGoPay');
+if(document.documentElement.clientWidth > 880){
+    if (deliveryBtn){
+        var panel = document.getElementsByClassName('delivery-body')[0];
+        var panel2 = document.getElementsByClassName('payment-body')[0];
+        
+        var deliveryTitle = document.getElementsByClassName('delivery-title')[0];
+        var deliveryH2= document.getElementsByClassName('delivery-h2')[0];
+        var linearDeliveryPayment = document.getElementsByClassName('linear-delivery-payment')[0];
 
+        panel.style.maxWidth = '100%';
+        panel.style.maxHeight = '100%';
+        deliveryBtn.addEventListener("click", function() {
+            window.scrollTo({top: 0,behavior: 'smooth',});
+            panel.style.maxHeight = null;
+            linearDeliveryPayment.style.width = 'calc(10%)';
+            linearDeliveryPayment.style.background = "#1D1D1D"
+            deliveryTitle.style.left = "calc(-" + deliveryH2.offsetWidth + "px - " + ((deliveryTitle.offsetWidth * 10) / 100) + "px - 48px - 48px)";
+            linearDeliveryPayment.classList.add('linear-delivery-payment-after');
+            setTimeout(() => {
+                panel2.style.maxHeight = panel2.scrollHeight + "px";
+            }, "400");
+        });
+
+        deliveryH2.addEventListener("click", function() {
+            if(panel2.style.maxHeight){
+                window.scrollTo({top: 0,behavior: 'smooth',});
+                panel2.style.maxHeight = null;
+                linearDeliveryPayment.style.width = 'calc(20%)';
+                linearDeliveryPayment.style.background = "#1D1D1D3D"
+                deliveryTitle.style.left = "0";
+                linearDeliveryPayment.classList.remove('linear-delivery-payment-after');
+                setTimeout(() => {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }, "400");
+            }
+        });
+
+        linearDeliveryPayment.addEventListener("click", function() {
+            if(panel2.style.maxHeight){
+                window.scrollTo({top: 0,behavior: 'smooth',});
+                panel2.style.maxHeight = null;
+                linearDeliveryPayment.style.width = 'calc(20%)';
+                linearDeliveryPayment.style.background = "#1D1D1D3D"
+                deliveryTitle.style.left = "0";
+                linearDeliveryPayment.classList.remove('linear-delivery-payment-after');
+                setTimeout(() => {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }, "400");
+            }
+        });
+    }  
+}
+
+var deliveryBtnMobile = document.getElementById('btnGoPayMobile');
+var deliveryBtnPayMobile = document.getElementById('btnPayMobile');
+if(document.documentElement.clientWidth < 880){
+    if (deliveryBtnMobile){
+        var panel = document.getElementsByClassName('delivery-body')[0];
+        var panel2 = document.getElementsByClassName('payment-body')[0];
+        
+        var deliveryHead = document.getElementById('deliveryHead');
+        var paymentHead = document.getElementById('paymentHead');
+        var deliveryTitle = document.getElementsByClassName('delivery-title')[0];
+        var deliveryH2= document.getElementsByClassName('delivery-h2')[0];
+        var paymentH2= document.getElementsByClassName('payment-h2')[0];
+        var linearDeliveryPayment = document.getElementsByClassName('linear-delivery-payment')[0];
+        var countPanel = 0;
+        panel.style.maxWidth = '100%';
+        panel.style.maxHeight = '100%';
+        deliveryTitle.style.width = "calc(" + paymentH2.offsetWidth + "px + " + deliveryH2.offsetWidth + "px + " + ((deliveryTitle.offsetWidth * 20) / 100) + "px + 32px + 32px)";
+
+        deliveryBtnMobile.addEventListener("click", function() {
+            /*paymentH2.style.display = 'flex';
+            deliveryH2.style.display = 'none';*/
+
+            panel.style.maxHeight = null;
+            window.scrollTo({top: 0,behavior: 'smooth',});
+            btnGoPayMobile.classList.toggle('mobile-none');
+            deliveryBtnPayMobile.classList.toggle('mobile-none');
+            deliveryHead.classList.add('mobile-none');
+            paymentHead.classList.remove('mobile-none');
+
+            deliveryTitle.style.left = "calc(-" + deliveryH2.offsetWidth + "px - 32px)";
+            linearDeliveryPayment.style.background = "#1D1D1D"
+            linearDeliveryPayment.classList.add('linear-delivery-payment-after');
+            setTimeout(() => {
+                panel2.style.maxHeight = panel2.scrollHeight + "px";
+            }, "450");
+            countPanel = 1;
+        });
+
+        deliveryH2.addEventListener("click", function() {
+            if(countPanel == 1){
+                /*paymentH2.style.display = 'none';
+                deliveryH2.style.display = 'flex';*/
+
+                panel2.style.maxHeight = null;
+                window.scrollTo({top: 0,behavior: 'smooth',});
+                btnGoPayMobile.classList.toggle('mobile-none');
+                deliveryBtnPayMobile.classList.toggle('mobile-none');
+                deliveryHead.classList.remove('mobile-none');
+                paymentHead.classList.add('mobile-none');
+                deliveryTitle.style.left = '0';
+                linearDeliveryPayment.style.background = "#1D1D1D3D"
+                linearDeliveryPayment.classList.remove('linear-delivery-payment-after');
+                setTimeout(() => {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }, "450");
+                countPanel = 0;
+            }
+        });
+
+        linearDeliveryPayment.addEventListener("click", function() {
+            if(countPanel == 1){
+                /*paymentH2.style.display = 'none';
+                deliveryH2.style.display = 'flex';*/
+
+                panel2.style.maxHeight = null;
+                window.scrollTo({top: 0,behavior: 'smooth',});
+                btnGoPayMobile.classList.toggle('mobile-none');
+                deliveryBtnPayMobile.classList.toggle('mobile-none');
+                deliveryHead.classList.remove('mobile-none');
+                paymentHead.classList.add('mobile-none');
+                deliveryTitle.style.left = '0';
+                linearDeliveryPayment.style.width = "calc(100% - 16px)"
+                linearDeliveryPayment.style.background = "#1D1D1D3D"
+                linearDeliveryPayment.classList.remove('linear-delivery-payment-after');
+                setTimeout(() => {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }, "450");
+                countPanel = 0;
+            }
+        });
+    }  
+}
+if(document.documentElement.clientWidth < 880){
+    var deliveryHead = document.getElementById('deliveryHead');
+    var deliveryHeadPolygon = document.getElementById('deliveryHead-polygon');
+    var paneldelivery = document.getElementsByClassName('delivery-body')[0];
+    if (deliveryHead){
+        setTimeout(() => {
+            paneldelivery.style.maxHeight = paneldelivery.scrollHeight + "px";
+        }, "400");
+        deliveryHead.addEventListener("click", function() {
+            deliveryHeadPolygon.classList.toggle('product-card-rotate-polygon');
+            if (paneldelivery.style.maxHeight) {
+                paneldelivery.style.maxHeight = null;
+            } else {
+                paneldelivery.style.maxHeight = paneldelivery.scrollHeight + "px";
+            }   
+        });
+    }  
+
+    var paymentHead = document.getElementById('paymentHead');
+    var paymentHeadPolygon = document.getElementById('paymentHead-polygon');
+    var panelpayment = document.getElementsByClassName('payment-body')[0];
+    if (paymentHead){
+        paymentHead.addEventListener("click", function() {
+            paymentHeadPolygon.classList.toggle('product-card-rotate-polygon');
+            if (panelpayment.style.maxHeight) {
+                panelpayment.style.maxHeight = null;
+            } else {
+                panelpayment.style.maxHeight = panelpayment.scrollHeight + "px";
+            }   
+        });
+    }  
+}
+
+var brandsAlphabetStringLetter = document.getElementsByClassName('brands-alphabet-string-letter');
+var arr = [];
+if(brandsAlphabetStringLetter.length > 0){
+    for(var i = 0; i < brandsAlphabetStringLetter.length; i++){
+        if(!brandsAlphabetStringLetter[i].classList.contains('brands-alphabet-string-letter-none')){
+            arr.push(brandsAlphabetStringLetter[i]);
+        }
+    }
+    arr[arr.length - 1].style.borderBottom = '0';
+}
+
+
+let customSelects = document.querySelectorAll('.custom-select');
+customSelects.forEach(function (select) {
+    let selectSelected = select.querySelector('.select-selected');
+    let selectItems = select.querySelector('.select-items');
+    let options = selectItems.querySelectorAll('div');
+
+    selectSelected.addEventListener('click', function () {
+        console.log('click');
+        if (selectItems.style.display === 'block') {
+            selectItems.style.display = 'none';
+            selectSelected.classList.remove('select-selected-click');
+        } else {
+            selectItems.style.display = 'block';
+            selectSelected.classList.add('select-selected-click');
+        }
+    });
+ 
+    options.forEach(function (option) {
+        option.addEventListener('click', function () {
+            selectSelected.textContent = option.textContent + " ????";
+            selectItems.style.display = 'none';
+        });
+    });
+ 
+    window.addEventListener('click', function (e) {
+        if (!select.contains(e.target)) {
+            selectItems.style.display = 'none';
+        }
+    });
+});

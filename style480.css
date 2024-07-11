@@ -924,4 +924,125 @@
     #shopping-bag{
         overflow: unset;
     }
+    /*//////////////////////////////////////////////////////////////////////////*/
+    /* Доставка и оплата ////////////////////////////////////////////////////////////////////*/
+    /*////////////////////////////////////////////////////////////////////////////////*/
+    .delivery-title{
+        position: relative;
+        width: calc(100% + 20%);
+        margin-left: 0;
+        margin-bottom: 16px;
+        align-items: end;
+        gap: 32px;
+        left: 0;
+        transition: .9s;
+        flex-wrap: nowrap;
+    }
+    .delivery-title h2{
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: 0.5%;
+    }
+    .delivery-title ~ .bread-crumbs-top-title{
+        display: none;
+    }
+    .linear-delivery-payment{
+        width: calc(100% - 16px);
+    }
+    .linear-delivery-payment::after{
+        background: #c9c9c9;
+        right: 0px;
+    }
+    .linear-delivery-payment::before{
+        background: #1D1D1D;
+        left: 0px;
+    }
+    .delivery-main-box{
+        width: calc(100%);
+    }
+    .delivery-head{
+        gap: 48px;
+        align-items: center;
+        border-right: 0px solid #1D1D1D3D;
+        border-bottom: 1px solid #1D1D1D;
+    }
+    .delivery-head-polygon{
+        width: 16px;
+        height: 16px;
+    }
+    #deliveryHead-polygon{
+        transition: .8s;
+    }
+    .delivery-payment-body{
+        border-right: 0px solid #1D1D1D3D;
+    }
+    .delivery-body{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        flex-wrap: nowrap;
+    }
+    .delivery-email-box{
+        width: calc(100%);
+    }
+    .delivery-country-box{
+        width: calc(100%);
+    }
+    .delivery-country-body{
+        width: calc(100%);
+    }
+    .delivery-address-box{
+        width: calc(100%);
+    }
+    .delivery-address-head{
+        width: calc(100%);
+    }
+    .delivery-address-body-row{
+        width: 100%;
+    }
+    .delivery-address-body{
+        width: calc(100%);
+    }
+    .delivery-address-line-body{
+        width: calc(100%);
+    }
+    .delivery-btn-box{
+        gap: 24px;
+    }
+    .delivery-btn-box>a.btn-primary{
+        display: none;
+    }
+    .delivery-btn-box-more-info{
+        gap: 8px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    #delivery-paymant .shopping-bag-order-box{
+        position: relative;
+    }
+    #paymentHead-polygon{
+        transition: .8s;
+    }
+    .payment-body{
+        width: calc(100%);
+        margin: 0 auto;
+        margin-left: 0;
+    }
+    .payment-top{
+        gap: 24px;
+    }
+    .payment-variation-radio-btn{
+        width: calc(100%);
+    }
+    .payment-variation-img-box{
+        width: calc(100%);
+        order: 1;
+    }
+    .payment-variation-img-box:nth-child(2){
+        margin-top: 8px;
+    }
+    #delivery-paymant .shopping-bag-order-box a.btn-primary{
+        width: calc(100% - 60px);
+    }
 }
