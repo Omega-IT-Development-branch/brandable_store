@@ -87,4 +87,106 @@
     .shopping-bag-order-price-btn-box>a.btn-primary{
         width: calc(100% - 60px);
     }
+    /*//////////////////////////////////////////////////////////////////////////*/
+    /* Доставка и оплата ////////////////////////////////////////////////////////////////////*/
+    /*////////////////////////////////////////////////////////////////////////////////*/
+    .delivery-title{
+        width: calc(100%);
+        margin-left: 0;
+    }
+    .delivery-title ~ .bread-crumbs-top-title{
+        width: calc(100%);
+        margin-left: 0;
+    }
+    .linear-delivery-payment{
+        width: calc(12%);
+    }
+    .delivery-main-box{
+        width: calc(100%);
+    }
+    .delivery-head{
+        border-right: 0px solid #1D1D1D3D;
+        border-bottom: 1px solid #1D1D1D;
+    }
+    .delivery-payment-body{
+        border-right: 0px solid #1D1D1D3D;
+    }
+    .delivery-email-box{
+        width: calc(50%  - 16px);
+    }
+    .delivery-country-box{
+        width: calc(100%);
+    }
+    .delivery-country-body{
+        width: calc(50% - 16px);
+    }
+    .delivery-address-box{
+        width: calc(100%);
+    }
+    .delivery-btn-box>a.btn-primary{
+        width: calc(50% - 16px - 60px)
+    }
+    .payment-body{
+        width: calc(100%);
+        margin-left: 0;
+    }
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*поиск брендов/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+    .brands-left-box{
+        width: 35%;
+    }
+    .brands-alphabet-box{
+        width: 65%;
+    }
+    .brands-alphabet-string-letter {
+        gap: 32px;
+    }
+    .brands-alphabet-item{
+        width: calc(50% - 16px);
+    }
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*Информационный блок /////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    .archive-blog-category{
+        width: calc(25% - 8px);
+    }
+    .archive-blog-small-box{
+        width: calc(75% - 8px);;
+    }
+    .archive-blog-small-item{
+        width: calc(33% - 12px);
+    }
+    .archive-blog-small-item .archive-blog-img{
+        height: 25vw;
+    }
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*Запись блога /////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    .single-blog-main-img{
+        height: 70vw;
+    }
+    .single-blog-left-box{
+        width: 40%;
+    }
+    .single-blog-right-box{
+        width:  calc(60% - 32px);
+        gap: 64px;
+    }
+    .single-blog-social-main-box{
+        margin-left: calc(40% + 32px);
+    }
+    .single-blog-comment-box{
+        margin-left: calc(40% + 32px);
+    }
+    .single-blog-new-comm{
+        margin-left: calc(40% + 32px);
+    }
+    .single-blog-btn-box{
+        margin-left: calc(40% + 32px);
+    }
+    .single-blog-btn-box a{
+        width: calc(50% - 8px - 60px);
+    }
 }

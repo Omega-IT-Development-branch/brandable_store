@@ -218,7 +218,7 @@ if(brandBoxs){
 function cursorSwiper(addCursor, removeCursor, queryClass) {
     var cursor = document.querySelector(queryClass);
     if(addCursor){
-        if(document.documentElement.clientWidth < 880){
+        if(document.documentElement.clientWidth <= 880){
             removeCursor.addEventListener("click", function (e) { 
                 let x = e.pageX;
                 let y = e.pageY;
@@ -257,7 +257,7 @@ function cursorSwiper(addCursor, removeCursor, queryClass) {
 function cursorElement(addCursor, queryClass) {
     var cursor = document.querySelector(queryClass);
     if(addCursor){
-        if(document.documentElement.clientWidth < 880){
+        if(document.documentElement.clientWidth <= 880){
             addCursor.addEventListener("click", function (e) { 
                 let x = e.pageX;
                 let y = e.pageY;
@@ -350,7 +350,7 @@ if(addCursorBrandBox){
     }
 }
 
-if(document.documentElement.clientWidth < 880){
+if(document.documentElement.clientWidth <= 880){
     var clickEmployee = document.getElementsByClassName('employee-item');
     for(let a = 0; a < clickEmployee.length; a++) {
         clickEmployee[a].addEventListener("click", (event) => { 
@@ -380,7 +380,6 @@ for(let a = 0; a < catalogChips.length; a++) {
                 ProdCardAddToBag.classList.remove("disabled");
             }
         }
-
         if (document.getElementById('prod-card-page') && catalogChips[a].classList.contains('tabs-size')){
             for(let s = 0; s < catalogChips.length; s++) {
                 if (catalogChips[s].classList.contains('tabs-size')){
@@ -389,15 +388,43 @@ for(let a = 0; a < catalogChips.length; a++) {
                 ProdCardAddToBag.classList.remove("disabled");
             }
         }
-
+        if (document.getElementById('info') && catalogChips[a].classList.contains('tab-pointer')){
+            for(let s = 0; s < catalogChips.length; s++) {
+                if(catalogChips[s].classList.contains('tab-pointer')){
+                    catalogChips[s].classList.remove('catalog-chips-checked');
+                }
+                setTimeout(() => {
+                    catalogChips[a].parentNode.style.maxHeight = catalogChips[a].parentNode.scrollHeight + "px";
+                }, "100");
+            }
+        }
+        if (document.getElementById('archive-blog') && catalogChips[a].classList.contains('tab-archive')){
+            for(let s = 0; s < catalogChips.length; s++) {
+                if(catalogChips[s].classList.contains('tab-archive')){
+                    catalogChips[s].classList.remove('catalog-chips-checked');
+                }
+                setTimeout(() => {
+                    catalogChips[a].parentNode.style.maxHeight = catalogChips[a].parentNode.scrollHeight + "px";
+                }, "100");
+            }
+        }
+        if (document.getElementById('archive-blog') && catalogChips[a].classList.contains('tab-archive-category')){
+            for(let s = 0; s < catalogChips.length; s++) {
+                if(catalogChips[s].classList.contains('tab-archive-category')){
+                    catalogChips[s].classList.remove('catalog-chips-checked');
+                }
+                setTimeout(() => {
+                    catalogChips[a].parentNode.style.maxHeight = catalogChips[a].parentNode.scrollHeight + "px";
+                }, "100");
+            }
+        }
         catalogChips[a].classList.toggle('catalog-chips-checked');
     }
 )}
-
+/*////////////////////////////////////////////////////////////// */
 /* НАЖАТИЕ НА ЧИПСЫ РАЗМЕРА В МОБЛИЬНОЙ ВЕРСИИ КАРТОЧКА ТОВАРА  */
 var catalogChips = document.getElementsByClassName('catalog-chips');
 var countIdChipsProductCard = 1;
-
 var chipsClick = [];
 var chipsInfoBLockList = [];
 for(let a = 0; a < catalogChips.length; a++) {
@@ -407,7 +434,6 @@ for(let a = 0; a < catalogChips.length; a++) {
         countIdChipsProductCard++;
     }
 }
-
 for (let a = 0; a < chipsClick.length; a++) {
     chipsClick[a].addEventListener("click", function () {
         for (let s = 0; s < chipsInfoBLockList.length; s++) {
@@ -420,7 +446,7 @@ for (let a = 0; a < chipsClick.length; a++) {
         }, "100");
     })
 }
-
+/**//////////////////////////////////////////////////////// */
 /* НАЖАТИЕ НА КРАСНУЮ ЧИПСУ */
 var catalogChipsRed = document.getElementsByClassName('catalog-chips-red');
 for(let a = 0; a < catalogChipsRed.length; a++) {
@@ -428,13 +454,13 @@ for(let a = 0; a < catalogChipsRed.length; a++) {
         catalogChipsRed[a].classList.toggle('catalog-chips-checked');
     }
 )}
+/*/////////////////////////*/
 
-
+/* ИЗМЕНИТЬ ОТОБРАЖЕНИЕ КАТАЛОГА */
 var catalogDisplayImg = document.getElementById('catalog-display-img');
 var catalogDisplaySvg1 = document.getElementById('catalog-display-svg1');
 var catalogDisplaySvg2 = document.getElementById('catalog-display-svg2');
 var catalogDisplaySvg3 = document.getElementById('catalog-display-svg3');
-
 var productsBox = document.getElementsByClassName('catalog-product-box')[0];
 var loadMore = document.getElementsByClassName('load-more')[0];
 var products = document.getElementsByClassName('product-item');
@@ -514,7 +540,9 @@ if(catalogDisplayImg){
     }
 })
 }
+/* ///////////////////////////////////////// */
 
+/* КНОПКА ЗАГРУЗИТЬ ЕЩЕ ЧТОБЫ КРУТИЛАСЬ */
 function loadMoreCatalog () {
     var loadMoreEclipse = document.getElementsByClassName('load-more-eclipse');
     for(var i = 0; i < loadMoreEclipse.length; i++){
@@ -526,39 +554,28 @@ function loadMoreCatalog () {
         }
     }
 }
+/* ///////////////////////////////////////// */
 
-var chipsCircleLow = document.querySelector('.chips-circle-low');
 var catalogChipsBig1 = document.getElementById('catalog-chips-none-vis1')
 var catalogChipsBig2 = document.getElementById('catalog-chips-none-vis2')
-if(chipsCircleLow){
-    chipsCircleLow.addEventListener("click", function () { 
-        if (catalogChipsBig1.style.height == '152px'){
-            catalogChipsBig1.style.height = '0';
-            catalogChipsBig1.style.marginTop = '0';
-            catalogChipsBig1.style.marginBottom = '0';
-
-            catalogChipsBig2.style.height = '0';
-        }else{
-            catalogChipsBig1.style.height = '152px';
-            catalogChipsBig1.style.marginTop = '32px';
-            catalogChipsBig1.style.marginBottom = '32px';
-
-            catalogChipsBig2.style.height = '32px';
-        }
-
-        var widthOff = 0;
-        var overflowChips = document.getElementsByClassName('catalog-chips-box-overflow')[0];
-        
-        for(var i = 0; i < overflowChips.childElementCount * 2; i++){
-            if(overflowChips.childNodes[i].tagName == 'DIV'){
-                widthOff = widthOff + overflowChips.childNodes[i].offsetWidth + 8;
-            }
-        }
-        overflowChips.style.width = (widthOff / 3) + 'px';
-        console.log((widthOff / 3) + 'px');
+/*ПОКАЗАТЬ БОЛЬШЕ ТАБОВ В МОБИЛКЕ НА СТРАНИЦЕ ИФОРМАЦИИ*/
+var chipsCatalogMore = document.getElementById('chipsCatalogMore');
+if(chipsCatalogMore){
+    chipsCatalogMore.addEventListener("click", function() {
+        console.log('Клик чипс', catalogChipsBig2);
+        if (catalogChipsBig1.style.maxHeight) {
+            catalogChipsBig1.style.maxHeight = null;
+            catalogChipsBig1.style.margin = '0px';
+            catalogChipsBig2.style.maxHeight = null;
+        } else {
+            catalogChipsBig1.style.maxHeight = catalogChipsBig1.scrollHeight + "px";
+            catalogChipsBig1.style.margin = '24px 0px';
+            catalogChipsBig2.style.maxHeight = catalogChipsBig2.scrollHeight + "px";
+        }   
     });
 }
 
+/*РАСКРЫТИЕ ИНфОРМАЦИИ НА СТРАНИЦЕ ПРОДУКТА 1*/
 var productCardSizeTitleBox = document.getElementById('productCardSizeTitleBox');
 var productCardSizeTitleBoxPolygin = document.getElementById('productCardSizeTitleBox-polygon');
 var productCardSizeTitleBoxDopInfo = document.getElementById('productCardSizeTitleBox-dop-info')
@@ -595,7 +612,8 @@ if(productCardSizeTitleBox){
         }
     })
 }
-
+/*////////////////////////////////////////// */
+/*РАСКРЫТИЕ ИНфОРМАЦИИ НА СТРАНИЦЕ ПРОДУКТА 2*/
 var productCardShippingReturns = document.getElementById('productCardShippingReturns');
 var productCardShippingReturnsPolygin = document.getElementById('productCardShippingReturns-polygon');
 if (productCardShippingReturns){
@@ -609,6 +627,7 @@ if (productCardShippingReturns){
         }   
     });
 }
+/*////////////////////////////////////////// */
 var productCardDetails = document.getElementById('productCardDetails');
 var productCardDetailsPolygin = document.getElementById('productCardDetails-polygon');
     if (productCardDetails){
@@ -813,7 +832,7 @@ if(document.documentElement.clientWidth > 880){
 
 var deliveryBtnMobile = document.getElementById('btnGoPayMobile');
 var deliveryBtnPayMobile = document.getElementById('btnPayMobile');
-if(document.documentElement.clientWidth < 880){
+if(document.documentElement.clientWidth <= 880){
     if (deliveryBtnMobile){
         var panel = document.getElementsByClassName('delivery-body')[0];
         var panel2 = document.getElementsByClassName('payment-body')[0];
@@ -893,7 +912,7 @@ if(document.documentElement.clientWidth < 880){
         });
     }  
 }
-if(document.documentElement.clientWidth < 880){
+if(document.documentElement.clientWidth <= 880){
     var deliveryHead = document.getElementById('deliveryHead');
     var deliveryHeadPolygon = document.getElementById('deliveryHead-polygon');
     var paneldelivery = document.getElementsByClassName('delivery-body')[0];
@@ -941,11 +960,11 @@ if(brandsAlphabetStringLetter.length > 0){
 let customSelects = document.querySelectorAll('.custom-select');
 customSelects.forEach(function (select) {
     let selectSelected = select.querySelector('.select-selected');
+    let selectSelectedText = select.querySelector('.select-selected-text');
     let selectItems = select.querySelector('.select-items');
     let options = selectItems.querySelectorAll('div');
 
     selectSelected.addEventListener('click', function () {
-        console.log('click');
         if (selectItems.style.display === 'block') {
             selectItems.style.display = 'none';
             selectSelected.classList.remove('select-selected-click');
@@ -957,14 +976,84 @@ customSelects.forEach(function (select) {
  
     options.forEach(function (option) {
         option.addEventListener('click', function () {
-            selectSelected.textContent = option.textContent + " ????";
+            selectSelectedText.textContent = option.textContent;
             selectItems.style.display = 'none';
+            selectSelected.classList.remove('select-selected-click');
+            selectSelectedText.style.color = "#1D1D1D";
         });
     });
  
     window.addEventListener('click', function (e) {
         if (!select.contains(e.target)) {
             selectItems.style.display = 'none';
+            selectSelected.classList.remove('select-selected-click');
         }
     });
 });
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+    
+    const blockID = anchor.getAttribute('href').substr(1)
+    
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}
+/*ОТКРЫТИЕ ТАБОВ*/
+openTab(event, 'AboutUs');
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        if (tabcontent[i] != document.getElementById(tabName)){
+            tabcontent[i].style.maxHeight = null;
+        }
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    setTimeout(() => {
+        document.getElementById(tabName).style.maxHeight =  document.getElementById(tabName).scrollHeight + "px";
+    }, "400");
+    if (evt != null){
+        evt.currentTarget.className += " active";
+    }
+}
+/* */
+/*ПОКАЗАТЬ БОЛЬШЕ ТАБОВ В МОБИЛКЕ НА СТРАНИЦЕ ИФОРМАЦИИ*/
+var aboutMoreTab = document.getElementById('aboutMoreTab');
+if(aboutMoreTab){
+    aboutMoreTab.addEventListener("click", function() {
+        var aboutPanelTab = document.querySelector('.about-center-tab-box');
+        if (aboutPanelTab.style.maxHeight) {
+            aboutPanelTab.style.maxHeight = null;
+        } else {
+            aboutPanelTab.style.maxHeight = aboutPanelTab.scrollHeight + "px";
+        }   
+    });
+}
+/*/////////////////////////////////////////////////////*/
+/*ПОКАЗАТЬ БОЛЬШЕ ТАБОВ В МОБИЛКЕ НА СТРАНИЦЕ БЛОГА*/
+var blogMoreTab = document.getElementById('blogMoreTab');
+if(blogMoreTab){
+    blogMoreTab.addEventListener("click", function() {
+        console.log('Кдикнулос')
+        var blogPanelTab = document.querySelector('.archive-blog-center-tab-box');
+        var categoryPanelTab = document.querySelector('.archive-blog-category');
+        if (blogPanelTab.style.maxHeight) {
+            blogPanelTab.style.maxHeight = null;
+            categoryPanelTab.style.maxHeight = null;
+            document.querySelector('.archive-blog-tab-btn-box').style.marginBottom = '0px';  
+        } else {
+            blogPanelTab.style.maxHeight = blogPanelTab.scrollHeight + "px";
+            categoryPanelTab.style.maxHeight = categoryPanelTab.scrollHeight + "px";
+            document.querySelector('.archive-blog-tab-btn-box').style.marginBottom = '24px';       }   
+    });
+}
